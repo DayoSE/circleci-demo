@@ -1,0 +1,949 @@
+[info]: Starting Checkov Extension. {"extensionVersion":"1.0.93","vscodeVersion":"1.76.0"}
+[info]: Trying to install Checkov using Docker. 
+[debug]: Testing docker installation with command: docker pull bridgecrew/checkov:latest 
+[info]: Checkov installed successfully using Docker. {"checkovPath":"docker"}
+[info]: Checkov installation:  {"checkovInstallationMethod":"docker","checkovPath":"docker"}
+[debug]: Version command: docker run --rm bridgecrew/checkov:latest -v 
+[debug]: Response from version command: 2.3.71
+ 
+[debug]: Previously installed checkov version matches the newly installed one 
+[debug]: Getting cached results for hash 33d4ddebeb38d75f45ec73853429b73b 
+[debug]: Today: 1678255200000 
+[debug]: Cache date: 1678255200000 
+[debug]: Cache date (1678255200000) is not stale 
+[debug]: useCache is true, but did not find cached results for file: /Users/aogunleke/terragoat/terraform/aws/elb.tf, hash: 33d4ddebeb38d75f45ec73853429b73b 
+[info]: Starting to scan. 
+[debug]: Output:
+origin	https://github.com/DayoSE/terragoat.git (fetch)
+origin	https://github.com/DayoSE/terragoat.git (push)
+ 
+[info]: repo urlhttps://github.com/DayoSE/terragoat.git 
+[info]: repo nameDayoSE/terragoat 
+[info]: Running checkov: 
+[info]: docker run --rm --tty --name vscode-checkov-1678314925371 --env PRISMA_API_URL=https://app2.prismacloud.io/ --env LOG_LEVEL=DEBUG --env BC_SOURCE=vscode --env BC_SOURCE_VERSION=1.0.93 -v "/Users/aogunleke/terragoat:/checkovScan" -v "/Users/aogunleke/checkov-troubleshoot-dayo/complete_chain.pem:/checkovCert/complete_chain.pem" -w /checkovScan bridgecrew/checkov:2.3.71 --ca-certificate "/checkovCert/complete_chain.pem" -f "terraform/aws/elb.tf" -s --bc-api-key **** --repo-id DayoSE/terragoat --skip-check BC_LIC* -o json 
+[debug]: Log from Checkov: 2023-03-08 22:35:26,348 [MainThread  ] [DEBUG]  Leveraging the bundled IAM Definition.
+2023-03-08 22:35:26,348 [MainThread  ] [DEBUG]  Leveraging the IAM definition at /usr/local/lib/python3.10/site-packages/policy_sentry/shared/data/iam-definition.json
+ 
+[debug]: Log from Checkov: 2023-03-08 22:35:26,664 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffffadd428c0> with order 1
+2023-03-08 22:35:26,664 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 22:35:26,664 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffffadd428c0>]
+ 
+[debug]: Log from Checkov: 2023-03-08 22:35:26,664 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffffad4403d0> with order 0
+2023-03-08 22:35:26,664 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 22:35:26,664 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffffad4403d0>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffffadd428c0>]
+2023-03-08 22:35:26,664 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffffad440850> with order 2
+2023-03-08 22:35:26,664 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 22:35:26,664 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffffad4403d0>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffffadd428c0>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffffad440850>]
+ 
+[debug]: Log from Checkov: 2023-03-08 22:35:26,665 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffffad441240> with order 6
+2023-03-08 22:35:26,665 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 22:35:26,665 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffffad4403d0>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffffadd428c0>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffffad440850>, <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffffad441240>]
+ 
+[debug]: Log from Checkov: 2023-03-08 22:35:26,665 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.repo_config_integration.RepoConfigIntegration object at 0xffffad441750> with order 0
+2023-03-08 22:35:26,665 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 22:35:26,665 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffffad4403d0>, <checkov.common.bridgecrew.integration_features.features.repo_config_integration.RepoConfigIntegration object at 0xffffad441750>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffffadd428c0>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffffad440850>, <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffffad441240>]
+2023-03-08 22:35:26,665 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.fixes_integration.FixesIntegration object at 0xffffad441db0> with order 10
+2023-03-08 22:35:26,665 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 22:35:26,665 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffffad4403d0>, <checkov.common.bridgecrew.integration_features.features.repo_config_integration.RepoConfigIntegration object at 0xffffad441750>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffffadd428c0>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffffad440850>, <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffffad441240>, <checkov.common.bridgecrew.integration_features.features.fixes_integration.FixesIntegration object at 0xffffad441db0>]
+ 
+[debug]: Log from Checkov: 2023-03-08 22:35:26,666 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.policies_3d_integration.Policies3DIntegration object at 0xffffad442080> with order 11
+2023-03-08 22:35:26,666 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 22:35:26,666 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffffad4403d0>, <checkov.common.bridgecrew.integration_features.features.repo_config_integration.RepoConfigIntegration object at 0xffffad441750>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffffadd428c0>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffffad440850>, <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffffad441240>, <checkov.common.bridgecrew.integration_features.features.fixes_integration.FixesIntegration object at 0xffffad441db0>, <checkov.common.bridgecrew.integration_features.features.policies_3d_integration.Policies3DIntegration object at 0xffffad442080>]
+ 
+[debug]: Log from Checkov: 2023-03-08 22:35:26,678 [MainThread  ] [DEBUG]  Loading external checks from /usr/local/lib/python3.10/site-packages/checkov/bicep/checks/graph_checks
+2023-03-08 22:35:26,678 [MainThread  ] [DEBUG]  Searching through ['__pycache__'] and ['__init__.py', 'SQLServerAuditingEnabled.yaml']
+ 
+[debug]: Log from Checkov: 2023-03-08 22:35:26,680 [MainThread  ] [DEBUG]  Searching through [] and ['__init__.cpython-310.pyc']
+ 
+[debug]: Log from Checkov: 2023-03-08 22:35:26,726 [MainThread  ] [DEBUG]  Popen(['git', 'version'], cwd=/checkovScan, universal_newlines=False, shell=None, istream=None)
+ 
+[debug]: Log from Checkov: 2023-03-08 22:35:26,727 [MainThread  ] [DEBUG]  Popen(['git', 'version'], cwd=/checkovScan, universal_newlines=False, shell=None, istream=None)
+ 
+[debug]: Log from Checkov: 2023-03-08 22:35:27,923 [MainThread  ] [DEBUG]  Run metadata: {
+  "checkov_version": "2.3.71",
+  "python_executable": "/usr/local/bin/python",
+  "python_version": "3.10.10 (main, Mar  1 2023, 11:26:27) [GCC 10.2.1 20210110]",
+  "checkov_executable": "/usr/local/bin/checkov",
+  "args": [
+    "Command Line Args:   --ca-certificate /checkovCert/complete_chain.pem -f terraform/aws/elb.tf -s --bc-api-key **** --repo-id DayoSE/terragoat --skip-check BC_LIC* -o json",
+    "Environment Variables:",
+    "  PRISMA_API_URL:    https://app2.prismacloud.io/",
+    "Defaults:",
+    "  --framework:       ['all']",
+    "  --branch:          master",
+    "  --download-external-modules:False",
+    "  --external-modules-download-path:.external_modules",
+    "  --evaluate-variables:True",
+    "  --secrets-scan-file-type:[]",
+    "  --block-list-secret-scan:[]",
+    "  --summary-position:top",
+    "  --mask:            []",
+    "  --secrets-history-timeout:12h",
+    ""
+  ],
+  "OS_system_info": "Linux-5.10.104-linuxkit-aarch64-with-glibc2.31",
+  "CPU_architecture": "",
+  "Python_implementation": "CPython"
+}
+2023-03-08 22:35:27,924 [MainThread  ] [DEBUG]  Using API key and not --include-all-checkov-policies - only running platform policies (this is the default behavior, and this message is just for debugging purposes)
+2023-03-08 22:35:27,924 [MainThread  ] [DEBUG]  Resultant set of frameworks (removing skipped frameworks): all
+2023-03-08 22:35:27,924 [MainThread  ] [DEBUG]  BC_SOURCE = vscode, version = 1.0.93
+ 
+[debug]: Log from Checkov: 2023-03-08 22:35:27,924 [MainThread  ] [DEBUG]  terraform_runner declares no system dependency checks required.
+2023-03-08 22:35:27,924 [MainThread  ] [DEBUG]  cloudformation_runner declares no system dependency checks required.
+2023-03-08 22:35:27,924 [MainThread  ] [DEBUG]  kubernetes_runner declares no system dependency checks required.
+2023-03-08 22:35:27,924 [MainThread  ] [DEBUG]  serverless_runner declares no system dependency checks required.
+2023-03-08 22:35:27,924 [MainThread  ] [DEBUG]  arm_runner declares no system dependency checks required.
+2023-03-08 22:35:27,924 [MainThread  ] [DEBUG]  terraform_plan_runner declares no system dependency checks required.
+2023-03-08 22:35:27,924 [MainThread  ] [INFO ]  Checking necessary system dependancies for helm checks.
+ 
+[debug]: Log from Checkov: 2023-03-08 22:35:27,946 [MainThread  ] [INFO ]  Found working version of helm dependancies: v3.11.1
+2023-03-08 22:35:27,946 [MainThread  ] [DEBUG]  dockerfile_runner declares no system dependency checks required.
+2023-03-08 22:35:27,946 [MainThread  ] [DEBUG]  secrets_runner declares no system dependency checks required.
+ 
+[debug]: Log from Checkov: 2023-03-08 22:35:27,946 [MainThread  ] [DEBUG]  json_runner declares no system dependency checks required.
+2023-03-08 22:35:27,946 [MainThread  ] [DEBUG]  yaml_runner declares no system dependency checks required.
+2023-03-08 22:35:27,946 [MainThread  ] [DEBUG]  github_configuration_runner declares no system dependency checks required.
+2023-03-08 22:35:27,946 [MainThread  ] [DEBUG]  gitlab_configuration_runner declares no system dependency checks required.
+2023-03-08 22:35:27,946 [MainThread  ] [DEBUG]  gitlab_ci_runner declares no system dependency checks required.
+2023-03-08 22:35:27,946 [MainThread  ] [DEBUG]  bitbucket_configuration_runner declares no system dependency checks required.
+2023-03-08 22:35:27,946 [MainThread  ] [DEBUG]  bitbucket_pipelines_runner declares no system dependency checks required.
+2023-03-08 22:35:27,946 [MainThread  ] [INFO ]  Checking necessary system dependancies for kustomize checks.
+ 
+[debug]: Log from Checkov: 2023-03-08 22:35:27,953 [MainThread  ] [INFO ]  Found working version of kustomize dependency kustomize: v5.0.0
+2023-03-08 22:35:27,953 [MainThread  ] [DEBUG]  github_actions_runner declares no system dependency checks required.
+2023-03-08 22:35:27,953 [MainThread  ] [DEBUG]  bicep_runner declares no system dependency checks required.
+2023-03-08 22:35:27,953 [MainThread  ] [DEBUG]  openapi_runner declares no system dependency checks required.
+2023-03-08 22:35:27,953 [MainThread  ] [DEBUG]  sca_image_runner declares no system dependency checks required.
+2023-03-08 22:35:27,953 [MainThread  ] [DEBUG]  argo_workflows_runner declares no system dependency checks required.
+2023-03-08 22:35:27,953 [MainThread  ] [DEBUG]  circleci_pipelines_runner declares no system dependency checks required.
+2023-03-08 22:35:27,953 [MainThread  ] [DEBUG]  azure_pipelines_runner declares no system dependency checks required.
+2023-03-08 22:35:27,953 [MainThread  ] [DEBUG]  ansible_runner declares no system dependency checks required.
+2023-03-08 22:35:27,953 [MainThread  ] [DEBUG]  sca_package_runner declares no system dependency checks required.
+2023-03-08 22:35:27,953 [MainThread  ] [DEBUG]  Using API key ending with Sl1p9uk=
+ 
+[debug]: Log from Checkov: 2023-03-08 22:35:27,953 [MainThread  ] [INFO ]  Using Prisma API URL: https://api2.prismacloud.io
+2023-03-08 22:35:27,953 [MainThread  ] [DEBUG]  Should run contributor metrics report: False
+ 
+[debug]: Log from Checkov: 2023-03-08 22:35:28,672 [MainThread  ] [WARNI]  Failed to get the customer run config from https://api2.prismacloud.io/bridgecrew/api/v2/checkov/runConfiguration
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connection.py", line 414, in connect
+    self.sock = ssl_wrap_socket(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/local/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/lib/python3.10/ssl.py", line 1071, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.10/ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get issuer certificate (_ssl.c:997)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 616, in get_customer_run_config
+    token = self.get_auth_token()
+  File "/usr/local/lib/python3.10/site-packages/cachetools/__init__.py", line 737, in wrapper
+    v = func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 182, in get_auth_token
+    request = self.http.request("POST", f"{self.prisma_api_url}/login",  # type:ignore[no-untyped-call]
+  File "/usr/local/lib/python3.10/site-packages/urllib3/request.py", line 78, in request
+    return self.request_encode_body(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api2.prismacloud.io', port=443): Max retries exceeded with url: /login (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get issuer certificate (_ssl.c:997)')))
+An error occurred getting data from the platform, including policy metadata. Because --include-all-checkov-policies was not used, Checkov cannot differentiate Checkov-only policies from platform policies, and no policies will get evaluated. Please resolve the error above or re-run with the --include-all-checkov-policies argument (but note that this will not include any custom platform configurations or policy metadata).[0m[0m[0m
+[0m[0m[0m2023-03-08 22:35:28,677 [MainThread  ] [ERROR]  Exception traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connection.py", line 414, in connect
+    self.sock = ssl_wrap_socket(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/local/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/lib/python3.10/ssl.py", line 1071, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.10/ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get issuer certificate (_ssl.c:997)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/checkov/main.py", line 782, in run
+    bc_integration.get_platform_run_config()
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 589, in get_platform_run_config
+    self.get_customer_run_config()
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 616, in get_customer_run_config
+    token = self.get_auth_token()
+  File "/usr/local/lib/python3.10/site-packages/cachetools/__init__.py", line 737, in wrapper
+    v = func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 182, in get_auth_token
+    request = self.http.request("POST", f"{self.prisma_api_url}/login",  # type:ignore[no-untyped-call]
+  File "/usr/local/lib/python3.10/site-packages/urllib3/request.py", line 78, in request
+    return self.request_encode_body(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api2.prismacloud.io', port=443): Max retries exceeded with url: /login (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get issuer certificate (_ssl.c:997)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/checkov/main.py", line 792, in run
+    self.exit_run()
+  File "/usr/local/lib/python3.10/site-packages/checkov/main.py", line 959, in exit_run
+    exit(0) if self.config.no_fail_on_crash else exit(2)
+  File "/usr/local/lib/python3.10/_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+System 
+[debug]: Log from Checkov: Exit: 2
+[0m[0m 
+[debug]: Checkov scan process exited with code 2 
+[debug]: Checkov task output: {"stdout":""}
+[error]: Error occurred while running a checkov scan {"error":"Checkov exited with code 2"}
+[info]: Cancellation token invoked, aborting checkov run. 
+[info]: not deleting container vscode-checkov-1678314925371 as it was already removed 
+[debug]: Getting cached results for hash 33d4ddebeb38d75f45ec73853429b73b 
+[debug]: Today: 1678255200000 
+[debug]: Cache date: 1678255200000 
+[debug]: Cache date (1678255200000) is not stale 
+[debug]: useCache is true, but did not find cached results for file: /Users/aogunleke/terragoat/terraform/aws/elb.tf, hash: 33d4ddebeb38d75f45ec73853429b73b 
+[info]: Starting to scan. 
+[debug]: Output:
+origin	https://github.com/DayoSE/terragoat.git (fetch)
+origin	https://github.com/DayoSE/terragoat.git (push)
+ 
+[info]: repo urlhttps://github.com/DayoSE/terragoat.git 
+[info]: repo nameDayoSE/terragoat 
+[info]: Running checkov: 
+[info]: docker run --rm --tty --name vscode-checkov-1678316181307 --env PRISMA_API_URL=https://app2.prismacloud.io/ --env LOG_LEVEL=DEBUG --env BC_SOURCE=vscode --env BC_SOURCE_VERSION=1.0.93 -v "/Users/aogunleke/terragoat:/checkovScan" -v "/Users/aogunleke/checkov-troubleshoot-dayo/complete_chain.pem:/checkovCert/complete_chain.pem" -w /checkovScan bridgecrew/checkov:2.3.71 --ca-certificate "/checkovCert/complete_chain.pem" -f "terraform/aws/elb.tf" -s --bc-api-key **** --repo-id DayoSE/terragoat --skip-check BC_LIC* -o json 
+[debug]: Log from Checkov: 2023-03-08 22:47:24,559 [MainThread  ] [DEBUG]  Leveraging the bundled IAM Definition.
+2023-03-08 22:47:24,560 [MainThread  ] [DEBUG]  Leveraging the IAM definition at /usr/local/lib/python3.10/site-packages/policy_sentry/shared/data/iam-definition.json
+ 
+[debug]: Log from Checkov: 2023-03-08 22:47:24,882 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff838e67a0> with order 1
+2023-03-08 22:47:24,883 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 22:47:24,883 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff838e67a0>]
+2023-03-08 22:47:24,883 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff82fd8310> with order 0
+2023-03-08 22:47:24,883 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 22:47:24,883 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff82fd8310>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff838e67a0>]
+2023-03-08 22:47:24,883 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff82fd8790> with order 2
+2023-03-08 22:47:24,883 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 22:47:24,883 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff82fd8310>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff838e67a0>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff82fd8790>]
+ 
+[debug]: Log from Checkov: 2023-03-08 22:47:24,884 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffff82fd9180> with order 6
+2023-03-08 22:47:24,884 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 22:47:24,884 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff82fd8310>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff838e67a0>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff82fd8790>, <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffff82fd9180>]
+2023-03-08 22:47:24,884 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.repo_config_integration.RepoConfigIntegration object at 0xffff82fd9690> with order 0
+2023-03-08 22:47:24,884 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 22:47:24,884 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff82fd8310>, <checkov.common.bridgecrew.integration_features.features.repo_config_integration.RepoConfigIntegration object at 0xffff82fd9690>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff838e67a0>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff82fd8790>, <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffff82fd9180>]
+ 
+[debug]: Log from Checkov: 2023-03-08 22:47:24,884 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.fixes_integration.FixesIntegration object at 0xffff82fd9cf0> with order 10
+2023-03-08 22:47:24,884 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 22:47:24,884 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff82fd8310>, <checkov.common.bridgecrew.integration_features.features.repo_config_integration.RepoConfigIntegration object at 0xffff82fd9690>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff838e67a0>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff82fd8790>, <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffff82fd9180>, <checkov.common.bridgecrew.integration_features.features.fixes_integration.FixesIntegration object at 0xffff82fd9cf0>]
+ 
+[debug]: Log from Checkov: 2023-03-08 22:47:24,885 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.policies_3d_integration.Policies3DIntegration object at 0xffff82fd9fc0> with order 11
+2023-03-08 22:47:24,885 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 22:47:24,885 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff82fd8310>, <checkov.common.bridgecrew.integration_features.features.repo_config_integration.RepoConfigIntegration object at 0xffff82fd9690>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff838e67a0>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff82fd8790>, <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffff82fd9180>, <checkov.common.bridgecrew.integration_features.features.fixes_integration.FixesIntegration object at 0xffff82fd9cf0>, <checkov.common.bridgecrew.integration_features.features.policies_3d_integration.Policies3DIntegration object at 0xffff82fd9fc0>]
+ 
+[debug]: Log from Checkov: 2023-03-08 22:47:24,896 [MainThread  ] [DEBUG]  Loading external checks from /usr/local/lib/python3.10/site-packages/checkov/bicep/checks/graph_checks
+2023-03-08 22:47:24,896 [MainThread  ] [DEBUG]  Searching through ['__pycache__'] and ['__init__.py', 'SQLServerAuditingEnabled.yaml']
+ 
+[debug]: Log from Checkov: 2023-03-08 22:47:24,899 [MainThread  ] [DEBUG]  Searching through [] and ['__init__.cpython-310.pyc']
+ 
+[debug]: Log from Checkov: 2023-03-08 22:47:24,944 [MainThread  ] [DEBUG]  Popen(['git', 'version'], cwd=/checkovScan, universal_newlines=False, shell=None, istream=None)
+ 
+[debug]: Log from Checkov: 2023-03-08 22:47:24,945 [MainThread  ] [DEBUG]  Popen(['git', 'version'], cwd=/checkovScan, universal_newlines=False, shell=None, istream=None)
+ 
+[debug]: Log from Checkov: 2023-03-08 22:47:25,637 [MainThread  ] [DEBUG]  Run metadata: {
+  "checkov_version": "2.3.71",
+  "python_executable": "/usr/local/bin/python",
+  "python_version": "3.10.10 (main, Mar  1 2023, 11:26:27) [GCC 10.2.1 20210110]",
+  "checkov_executable": "/usr/local/bin/checkov",
+  "args": [
+    "Command Line Args:   --ca-certificate /checkovCert/complete_chain.pem -f terraform/aws/elb.tf -s --bc-api-key **** --repo-id DayoSE/terragoat --skip-check BC_LIC* -o json",
+    "Environment Variables:",
+    "  PRISMA_API_URL:    https://app2.prismacloud.io/",
+    "Defaults:",
+    "  --framework:       ['all']",
+    "  --branch:          master",
+    "  --download-external-modules:False",
+    "  --external-modules-download-path:.external_modules",
+    "  --evaluate-variables:True",
+    "  --secrets-scan-file-type:[]",
+    "  --block-list-secret-scan:[]",
+    "  --summary-position:top",
+    "  --mask:            []",
+    "  --secrets-history-timeout:12h",
+    ""
+  ],
+  "OS_system_info": "Linux-5.10.104-linuxkit-aarch64-with-glibc2.31",
+  "CPU_architecture": "",
+  "Python_implementation": "CPython"
+}
+2023-03-08 22:47:25,637 [MainThread  ] [DEBUG]  Using API key and not --include-all-checkov-policies - only running platform policies (this is the default behavior, and this message is just for debugging purposes)
+2023-03-08 22:47:25,637 [MainThread  ] [DEBUG]  Resultant set of frameworks (removing skipped frameworks): all
+2023-03-08 22:47:25,637 [MainThread  ] [DEBUG]  BC_SOURCE = vscode, version = 1.0.93
+2023-03-08 22:47:25,637 [MainThread  ] [DEBUG]  terraform_runner declares no system dependency checks required.
+2023-03-08 22:47:25,637 [MainThread  ] [DEBUG]  cloudformation_runner declares no system dependency checks required.
+2023-03-08 22:47:25,637 [MainThread  ] [DEBUG]  kubernetes_runner declares no system dependency checks required.
+2023-03-08 22:47:25,637 [MainThread  ] [DEBUG]  serverless_runner declares no system dependency checks required.
+2023-03-08 22:47:25,637 [MainThread  ] [DEBUG]  arm_runner declares no system dependency checks required.
+ 
+[debug]: Log from Checkov: 2023-03-08 22:47:25,637 [MainThread  ] [DEBUG]  terraform_plan_runner declares no system dependency checks required.
+2023-03-08 22:47:25,637 [MainThread  ] [INFO ]  Checking necessary system dependancies for helm checks.
+ 
+[debug]: Log from Checkov: 2023-03-08 22:47:25,652 [MainThread  ] [INFO ]  Found working version of helm dependancies: v3.11.1
+2023-03-08 22:47:25,652 [MainThread  ] [DEBUG]  dockerfile_runner declares no system dependency checks required.
+2023-03-08 22:47:25,652 [MainThread  ] [DEBUG]  secrets_runner declares no system dependency checks required.
+2023-03-08 22:47:25,652 [MainThread  ] [DEBUG]  json_runner declares no system dependency checks required.
+2023-03-08 22:47:25,652 [MainThread  ] [DEBUG]  yaml_runner declares no system dependency checks required.
+2023-03-08 22:47:25,652 [MainThread  ] [DEBUG]  github_configuration_runner declares no system dependency checks required.
+2023-03-08 22:47:25,652 [MainThread  ] [DEBUG]  gitlab_configuration_runner declares no system dependency checks required.
+2023-03-08 22:47:25,652 [MainThread  ] [DEBUG]  gitlab_ci_runner declares no system dependency checks required.
+2023-03-08 22:47:25,652 [MainThread  ] [DEBUG]  bitbucket_configuration_runner declares no system dependency checks required.
+2023-03-08 22:47:25,652 [MainThread  ] [DEBUG]  bitbucket_pipelines_runner declares no system dependency checks required.
+2023-03-08 22:47:25,652 [MainThread  ] [INFO ]  Checking necessary system dependancies for kustomize checks.
+ 
+[debug]: Log from Checkov: 2023-03-08 22:47:25,656 [MainThread  ] [INFO ]  Found working version of kustomize dependency kustomize: v5.0.0
+2023-03-08 22:47:25,656 [MainThread  ] [DEBUG]  github_actions_runner declares no system dependency checks required.
+2023-03-08 22:47:25,656 [MainThread  ] [DEBUG]  bicep_runner declares no system dependency checks required.
+2023-03-08 22:47:25,656 [MainThread  ] [DEBUG]  openapi_runner declares no system dependency checks required.
+2023-03-08 22:47:25,656 [MainThread  ] [DEBUG]  sca_image_runner declares no system dependency checks required.
+2023-03-08 22:47:25,656 [MainThread  ] [DEBUG]  argo_workflows_runner declares no system dependency checks required.
+2023-03-08 22:47:25,656 [MainThread  ] [DEBUG]  circleci_pipelines_runner declares no system dependency checks required.
+2023-03-08 22:47:25,656 [MainThread  ] [DEBUG]  azure_pipelines_runner declares no system dependency checks required.
+2023-03-08 22:47:25,656 [MainThread  ] [DEBUG]  ansible_runner declares no system dependency checks required.
+2023-03-08 22:47:25,656 [MainThread  ] [DEBUG]  sca_package_runner declares no system dependency checks required.
+2023-03-08 22:47:25,656 [MainThread  ] [DEBUG]  Using API key ending with Sl1p9uk=
+2023-03-08 22:47:25,656 [MainThread  ] [INFO ]  Using Prisma API URL: https://api2.prismacloud.io
+2023-03-08 22:47:25,656 [MainThread  ] [DEBUG]  Should run contributor metrics report: False
+ 
+[debug]: Log from Checkov: 2023-03-08 22:47:26,437 [MainThread  ] [WARNI]  Failed to get the customer run config from https://api2.prismacloud.io/bridgecrew/api/v2/checkov/runConfiguration
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connection.py", line 414, in connect
+    self.sock = ssl_wrap_socket(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/local/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/lib/python3.10/ssl.py", line 1071, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.10/ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get issuer certificate (_ssl.c:997)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 616, in get_customer_run_config
+    token = self.get_auth_token()
+  File "/usr/local/lib/python3.10/site-packages/cachetools/__init__.py", line 737, in wrapper
+    v = func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 182, in get_auth_token
+    request = self.http.request("POST", f"{self.prisma_api_url}/login",  # type:ignore[no-untyped-call]
+  File "/usr/local/lib/python3.10/site-packages/urllib3/request.py", line 78, in request
+    return self.request_encode_body(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api2.prismacloud.io', port=443): Max retries exceeded with url: /login (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get issuer certificate (_ssl.c:997)')))
+An error occurred getting data from the platform, including policy metadata. Because --include-all-checkov-policies was not used, Checkov cannot differentiate Checkov-only policies from platform policies, and no policies will get evaluated. Please resolve the error above or re-run with the --include-all-checkov-policies argument (but note that this will not include any custom platform configurations or policy metadata).[0m[0m[0m
+[0m[0m 
+[debug]: Log from Checkov: [0m2023-03-08 22:47:26,439 [MainThread  ] [ERROR]  Exception traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connection.py", line 414, in connect
+    self.sock = ssl_wrap_socket(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/local/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/lib/python3.10/ssl.py", line 1071, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.10/ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get issuer certificate (_ssl.c:997)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/checkov/main.py", line 782, in run
+    bc_integration.get_platform_run_config()
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 589, in get_platform_run_config
+    self.get_customer_run_config()
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 616, in get_customer_run_config
+    token = self.get_auth_token()
+  File "/usr/local/lib/python3.10/site-packages/cachetools/__init__.py", line 737, in wrapper
+    v = func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 182, in get_auth_token
+    request = self.http.request("POST", f"{self.prisma_api_url}/login",  # type:ignore[no-untyped-call]
+  File "/usr/local/lib/python3.10/site-packages/urllib3/request.py", line 78, in request
+    return self.request_encode_body(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api2.prismacloud.io', port=443): Max retries exceeded with url: /login (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get issuer certificate (_ssl.c:997)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/checkov/main.py", line 792, in run
+    self.exit_run()
+  File "/usr/local/lib/python3.10/site-packages/checkov/main.py", line 959, in exit_run
+    exit(0) if self.config.no_fail_on_crash else exit(2)
+  File "/usr/local/lib/python3.10/_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+SystemExit: 2
+[0m[0m 
+[debug]: Checkov scan process exited with code 2 
+[debug]: Checkov task output: {"stdout":""}
+[error]: Error occurred while running a checkov scan {"error":"Checkov exited with code 2"}
+[info]: Cancellation token invoked, aborting checkov run. 
+[info]: not deleting container vscode-checkov-1678316181307 as it was already removed 
+[debug]: Getting cached results for hash 398b66e6a3ab8f189f89d3c2e99212dc 
+[debug]: Today: 1678255200000 
+[debug]: Cache date: 1678255200000 
+[debug]: Cache date (1678255200000) is not stale 
+[debug]: useCache is true, but did not find cached results for file: /Users/aogunleke/terragoat/terraform/aws/rds.tf, hash: 398b66e6a3ab8f189f89d3c2e99212dc 
+[info]: Starting to scan. 
+[debug]: Output:
+origin	https://github.com/DayoSE/terragoat.git (fetch)
+origin	https://github.com/DayoSE/terragoat.git (push)
+ 
+[info]: repo urlhttps://github.com/DayoSE/terragoat.git 
+[info]: repo nameDayoSE/terragoat 
+[info]: Running checkov: 
+[info]: docker run --rm --tty --name vscode-checkov-1678316733498 --env PRISMA_API_URL=https://app2.prismacloud.io/ --env LOG_LEVEL=DEBUG --env BC_SOURCE=vscode --env BC_SOURCE_VERSION=1.0.93 -v "/Users/aogunleke/terragoat:/checkovScan" -v "/Users/aogunleke/checkov-troubleshoot-dayo/complete_chain.pem:/checkovCert/complete_chain.pem" -w /checkovScan bridgecrew/checkov:2.3.71 --ca-certificate "/checkovCert/complete_chain.pem" -f "terraform/aws/rds.tf" -s --bc-api-key **** --repo-id DayoSE/terragoat --skip-check BC_LIC* -o json 
+[debug]: Log from Checkov: 2023-03-08 23:05:34,437 [MainThread  ] [DEBUG]  Leveraging the bundled IAM Definition.
+2023-03-08 23:05:34,437 [MainThread  ] [DEBUG]  Leveraging the IAM definition at /usr/local/lib/python3.10/site-packages/policy_sentry/shared/data/iam-definition.json
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:34,784 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff8410ab00> with order 1
+2023-03-08 23:05:34,784 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 23:05:34,784 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff8410ab00>]
+2023-03-08 23:05:34,784 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff837fc580> with order 0
+2023-03-08 23:05:34,784 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 23:05:34,784 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff837fc580>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff8410ab00>]
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:34,784 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff837fca00> with order 2
+2023-03-08 23:05:34,784 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 23:05:34,784 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff837fc580>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff8410ab00>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff837fca00>]
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:34,785 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffff837fd3f0> with order 6
+2023-03-08 23:05:34,785 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 23:05:34,785 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff837fc580>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff8410ab00>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff837fca00>, <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffff837fd3f0>]
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:34,785 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.repo_config_integration.RepoConfigIntegration object at 0xffff837fd900> with order 0
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:34,785 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 23:05:34,785 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff837fc580>, <checkov.common.bridgecrew.integration_features.features.repo_config_integration.RepoConfigIntegration object at 0xffff837fd900>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff8410ab00>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff837fca00>, <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffff837fd3f0>]
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:34,785 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.fixes_integration.FixesIntegration object at 0xffff837fdf60> with order 10
+2023-03-08 23:05:34,785 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 23:05:34,785 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff837fc580>, <checkov.common.bridgecrew.integration_features.features.repo_config_integration.RepoConfigIntegration object at 0xffff837fd900>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff8410ab00>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff837fca00>, <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffff837fd3f0>, <checkov.common.bridgecrew.integration_features.features.fixes_integration.FixesIntegration object at 0xffff837fdf60>]
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:34,786 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.policies_3d_integration.Policies3DIntegration object at 0xffff837fe230> with order 11
+2023-03-08 23:05:34,786 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 23:05:34,786 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff837fc580>, <checkov.common.bridgecrew.integration_features.features.repo_config_integration.RepoConfigIntegration object at 0xffff837fd900>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff8410ab00>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff837fca00>, <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffff837fd3f0>, <checkov.common.bridgecrew.integration_features.features.fixes_integration.FixesIntegration object at 0xffff837fdf60>, <checkov.common.bridgecrew.integration_features.features.policies_3d_integration.Policies3DIntegration object at 0xffff837fe230>]
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:34,799 [MainThread  ] [DEBUG]  Loading external checks from /usr/local/lib/python3.10/site-packages/checkov/bicep/checks/graph_checks
+2023-03-08 23:05:34,799 [MainThread  ] [DEBUG]  Searching through ['__pycache__'] and ['__init__.py', 'SQLServerAuditingEnabled.yaml']
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:34,802 [MainThread  ] [DEBUG]  Searching through [] and ['__init__.cpython-310.pyc']
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:34,851 [MainThread  ] [DEBUG]  Popen(['git', 'version'], cwd=/checkovScan, universal_newlines=False, shell=None, istream=None)
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:34,852 [MainThread  ] [DEBUG]  Popen(['git', 'version'], cwd=/checkovScan, universal_newlines=False, shell=None, istream=None)
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:35,608 [MainThread  ] [DEBUG]  Run metadata: {
+  "checkov_version": "2.3.71",
+  "python_executable": "/usr/local/bin/python",
+  "python_version": "3.10.10 (main, Mar  1 2023, 11:26:27) [GCC 10.2.1 20210110]",
+  "checkov_executable": "/usr/local/bin/checkov",
+  "args": [
+    "Command Line Args:   --ca-certificate /checkovCert/complete_chain.pem -f terraform/aws/rds.tf -s --bc-api-key **** --repo-id DayoSE/terragoat --skip-check BC_LIC* -o json",
+    "Environment Variables:",
+    "  PRISMA_API_URL:    https://app2.prismacloud.io/",
+    "Defaults:",
+    "  --framework:       ['all']",
+    "  --branch:          master",
+    "  --download-external-modules:False",
+    "  --external-modules-download-path:.external_modules",
+    "  --evaluate-variables:True",
+    "  --secrets-scan-file-type:[]",
+    "  --block-list-secret-scan:[]",
+    "  --summary-position:top",
+    "  --mask:            []",
+    "  --secrets-history-timeout:12h",
+    ""
+  ],
+  "OS_system_info": "Linux-5.10.104-linuxkit-aarch64-with-glibc2.31",
+  "CPU_architecture": "",
+  "Python_implementation": "CPython"
+}
+2023-03-08 23:05:35,608 [MainThread  ] [DEBUG]  Using API key and not --include-all-checkov-policies - only running platform policies (this is the default behavior, and this message is just for debugging purposes)
+2023-03-08 23:05:35,608 [MainThread  ] [DEBUG]  Resultant set of frameworks (removing skipped frameworks): all
+2023-03-08 23:05:35,608 [MainThread  ] [DEBUG]  BC_SOURCE = vscode, version = 1.0.93
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:35,608 [MainThread  ] [DEBUG]  terraform_runner declares no system dependency checks required.
+2023-03-08 23:05:35,608 [MainThread  ] [DEBUG]  cloudformation_runner declares no system dependency checks required.
+2023-03-08 23:05:35,608 [MainThread  ] [DEBUG]  kubernetes_runner declares no system dependency checks required.
+2023-03-08 23:05:35,608 [MainThread  ] [DEBUG]  serverless_runner declares no system dependency checks required.
+2023-03-08 23:05:35,608 [MainThread  ] [DEBUG]  arm_runner declares no system dependency checks required.
+2023-03-08 23:05:35,608 [MainThread  ] [DEBUG]  terraform_plan_runner declares no system dependency checks required.
+2023-03-08 23:05:35,608 [MainThread  ] [INFO ]  Checking necessary system dependancies for helm checks.
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:35,630 [MainThread  ] [INFO ]  Found working version of helm dependancies: v3.11.1
+2023-03-08 23:05:35,630 [MainThread  ] [DEBUG]  dockerfile_runner declares no system dependency checks required.
+2023-03-08 23:05:35,630 [MainThread  ] [DEBUG]  secrets_runner declares no system dependency checks required.
+2023-03-08 23:05:35,630 [MainThread  ] [DEBUG]  json_runner declares no system dependency checks required.
+2023-03-08 23:05:35,630 [MainThread  ] [DEBUG]  yaml_runner declares no system dependency checks required.
+2023-03-08 23:05:35,630 [MainThread  ] [DEBUG]  github_configuration_runner declares no system dependency checks required.
+2023-03-08 23:05:35,630 [MainThread  ] [DEBUG]  gitlab_configuration_runner declares no system dependency checks required.
+2023-03-08 23:05:35,630 [MainThread  ] [DEBUG]  gitlab_ci_runner declares no system dependency checks required.
+2023-03-08 23:05:35,630 [MainThread  ] [DEBUG]  bitbucket_configuration_runner declares no system dependency checks required.
+2023-03-08 23:05:35,630 [MainThread  ] [DEBUG]  bitbucket_pipelines_runner declares no system dependency checks required.
+2023-03-08 23:05:35,630 [MainThread  ] [INFO ]  Checking necessary system dependancies for kustomize checks.
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:35,635 [MainThread  ] [INFO ]  Found working version of kustomize dependency kustomize: v5.0.0
+2023-03-08 23:05:35,635 [MainThread  ] [DEBUG]  github_actions_runner declares no system dependency checks required.
+2023-03-08 23:05:35,635 [MainThread  ] [DEBUG]  bicep_runner declares no system dependency checks required.
+2023-03-08 23:05:35,635 [MainThread  ] [DEBUG]  openapi_runner declares no system dependency checks required.
+2023-03-08 23:05:35,635 [MainThread  ] [DEBUG]  sca_image_runner declares no system dependency checks required.
+2023-03-08 23:05:35,635 [MainThread  ] [DEBUG]  argo_workflows_runner declares no system dependency checks required.
+2023-03-08 23:05:35,635 [MainThread  ] [DEBUG]  circleci_pipelines_runner declares no system dependency checks required.
+2023-03-08 23:05:35,635 [MainThread  ] [DEBUG]  azure_pipelines_runner declares no system dependency checks required.
+2023-03-08 23:05:35,635 [MainThread  ] [DEBUG]  ansible_runner declares no system dependency checks required.
+2023-03-08 23:05:35,635 [MainThread  ] [DEBUG]  sca_package_runner declares no system dependency checks required.
+2023-03-08 23:05:35,635 [MainThread  ] [DEBUG]  Using API key ending with Sl1p9uk=
+2023-03-08 23:05:35,635 [MainThread  ] [INFO ]  Using Prisma API URL: https://api2.prismacloud.io
+2023-03-08 23:05:35,635 [MainThread  ] [DEBUG]  Should run contributor metrics report: False
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:36,432 [MainThread  ] [WARNI]  Failed to get the customer run config from https://api2.prismacloud.io/bridgecrew/api/v2/checkov/runConfiguration
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connection.py", line 414, in connect
+    self.sock = ssl_wrap_socket(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/local/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/lib/python3.10/ssl.py", line 1071, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.10/ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get issuer certificate (_ssl.c:997)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 616, in get_customer_run_config
+    token = self.get_auth_token()
+  File "/usr/local/lib/python3.10/site-packages/cachetools/__init__.py", line 737, in wrapper
+    v = func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 182, in get_auth_token
+    request = self.http.request("POST", f"{self.prisma_api_url}/login",  # type:ignore[no-untyped-call]
+  File "/usr/local/lib/python3.10/site-packages/urllib3/request.py", line 78, in request
+    return self.request_encode_body(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api2.prismacloud.io', port=443): Max retries exceeded with url: /login (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get issuer certificate (_ssl.c:997)')))
+An error occurred getting data from the platform, including policy metadata. Because --include-all-checkov-policies was not used, Checkov cannot differentiate Checkov-only policies from platform policies, and no policies will get evaluated. Please resolve the error above or re-run with the --include-all-checkov-policies argument (but note that this will not include any custom platform configurations or policy metadata).[0m[0m[0m
+[0m[0m 
+[debug]: Log from Checkov: [0m2023-03-08 23:05:36,437 [MainThread  ] [ERROR]  Exception traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connection.py", line 414, in connect
+    self.sock = ssl_wrap_socket(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/local/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/lib/python3.10/ssl.py", line 1071, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.10/ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get issuer certificate (_ssl.c:997)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/checkov/main.py", line 782, in run
+    bc_integration.get_platform_run_config()
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 589, in get_platform_run_config
+    self.get_customer_run_config()
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 616, in get_customer_run_config
+    token = self.get_auth_token()
+  File "/usr/local/lib/python3.10/site-packages/cachetools/__init__.py", line 737, in wrapper
+    v = func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 182, in get_auth_token
+    request = self.http.request("POST", f"{self.prisma_api_url}/login",  # type:ignore[no-untyped-call]
+  File "/usr/local/lib/python3.10/site-packages/urllib3/request.py", line 78, in request
+    return self.request_encode_body(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api2.prismacloud.io', port=443): Max retries exceeded with url: /login (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get issuer certificate (_ssl.c:997)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/checkov/main.py", line 792, in run
+    self.exit_run()
+  File "/usr/local/lib/python3.10/site-packages/checkov/main.py", line 959, in exit_run
+    exit(0) if self.config.no_fail_on_crash else exit(2)
+  File "/usr/local/lib/python3.10/_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+SystemExit: 2
+[0m[0m 
+[info]: Cancellation token invoked, aborting checkov run. 
+[debug]: Getting cached results for hash 7160b889d4a9a351eb9885749ac60e6f 
+[debug]: Today: 1678255200000 
+[debug]: Cache date: 1678255200000 
+[debug]: Cache date (1678255200000) is not stale 
+[debug]: useCache is true, but did not find cached results for file: /Users/aogunleke/terragoat/terraform/aws/neptune.tf, hash: 7160b889d4a9a351eb9885749ac60e6f 
+[info]: Starting to scan. 
+[debug]: Output:
+origin	https://github.com/DayoSE/terragoat.git (fetch)
+origin	https://github.com/DayoSE/terragoat.git (push)
+ 
+[info]: repo urlhttps://github.com/DayoSE/terragoat.git 
+[info]: repo nameDayoSE/terragoat 
+[info]: Running checkov: 
+[info]: docker run --rm --tty --name vscode-checkov-1678316736773 --env PRISMA_API_URL=https://app2.prismacloud.io/ --env LOG_LEVEL=DEBUG --env BC_SOURCE=vscode --env BC_SOURCE_VERSION=1.0.93 -v "/Users/aogunleke/terragoat:/checkovScan" -v "/Users/aogunleke/checkov-troubleshoot-dayo/complete_chain.pem:/checkovCert/complete_chain.pem" -w /checkovScan bridgecrew/checkov:2.3.71 --ca-certificate "/checkovCert/complete_chain.pem" -f "terraform/aws/neptune.tf" -s --bc-api-key **** --repo-id DayoSE/terragoat --skip-check BC_LIC* -o json 
+[debug]: Log from Checkov: 2023-03-08 23:05:37,591 [MainThread  ] [DEBUG]  Leveraging the bundled IAM Definition.
+2023-03-08 23:05:37,591 [MainThread  ] [DEBUG]  Leveraging the IAM definition at /usr/local/lib/python3.10/site-packages/policy_sentry/shared/data/iam-definition.json
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:37,913 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff816ea9e0> with order 1
+2023-03-08 23:05:37,913 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 23:05:37,913 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff816ea9e0>]
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:37,913 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff80cc0550> with order 0
+2023-03-08 23:05:37,913 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 23:05:37,913 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff80cc0550>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff816ea9e0>]
+2023-03-08 23:05:37,913 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff80cc09d0> with order 2
+2023-03-08 23:05:37,913 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 23:05:37,913 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff80cc0550>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff816ea9e0>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff80cc09d0>]
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:37,914 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffff80cc13c0> with order 6
+2023-03-08 23:05:37,914 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 23:05:37,914 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff80cc0550>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff816ea9e0>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff80cc09d0>, <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffff80cc13c0>]
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:37,914 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.repo_config_integration.RepoConfigIntegration object at 0xffff80cc18d0> with order 0
+2023-03-08 23:05:37,914 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 23:05:37,914 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff80cc0550>, <checkov.common.bridgecrew.integration_features.features.repo_config_integration.RepoConfigIntegration object at 0xffff80cc18d0>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff816ea9e0>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff80cc09d0>, <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffff80cc13c0>]
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:37,914 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.fixes_integration.FixesIntegration object at 0xffff80cc1f30> with order 10
+2023-03-08 23:05:37,914 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 23:05:37,914 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff80cc0550>, <checkov.common.bridgecrew.integration_features.features.repo_config_integration.RepoConfigIntegration object at 0xffff80cc18d0>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff816ea9e0>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff80cc09d0>, <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffff80cc13c0>, <checkov.common.bridgecrew.integration_features.features.fixes_integration.FixesIntegration object at 0xffff80cc1f30>]
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:37,915 [MainThread  ] [DEBUG]  Adding the IntegrationFeatureRegistry <checkov.common.bridgecrew.integration_features.features.policies_3d_integration.Policies3DIntegration object at 0xffff80cc2200> with order 11
+2023-03-08 23:05:37,915 [MainThread  ] [DEBUG]  self.features after the sort:
+2023-03-08 23:05:37,915 [MainThread  ] [DEBUG]  [<checkov.common.bridgecrew.integration_features.features.policy_metadata_integration.PolicyMetadataIntegration object at 0xffff80cc0550>, <checkov.common.bridgecrew.integration_features.features.repo_config_integration.RepoConfigIntegration object at 0xffff80cc18d0>, <checkov.common.bridgecrew.integration_features.features.custom_policies_integration.CustomPoliciesIntegration object at 0xffff816ea9e0>, <checkov.common.bridgecrew.integration_features.features.suppressions_integration.SuppressionsIntegration object at 0xffff80cc09d0>, <checkov.common.bridgecrew.integration_features.features.licensing_integration.LicensingIntegration object at 0xffff80cc13c0>, <checkov.common.bridgecrew.integration_features.features.fixes_integration.FixesIntegration object at 0xffff80cc1f30>, <checkov.common.bridgecrew.integration_features.features.policies_3d_integration.Policies3DIntegration object at 0xffff80cc2200>]
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:37,928 [MainThread  ] [DEBUG]  Loading external checks from /usr/local/lib/python3.10/site-packages/checkov/bicep/checks/graph_checks
+2023-03-08 23:05:37,928 [MainThread  ] [DEBUG]  Searching through ['__pycache__'] and ['__init__.py', 'SQLServerAuditingEnabled.yaml']
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:37,930 [MainThread  ] [DEBUG]  Searching through [] and ['__init__.cpython-310.pyc']
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:37,976 [MainThread  ] [DEBUG]  Popen(['git', 'version'], cwd=/checkovScan, universal_newlines=False, shell=None, istream=None)
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:37,977 [MainThread  ] [DEBUG]  Popen(['git', 'version'], cwd=/checkovScan, universal_newlines=False, shell=None, istream=None)
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:38,638 [MainThread  ] [DEBUG]  Run metadata: {
+  "checkov_version": "2.3.71",
+  "python_executable": "/usr/local/bin/python",
+  "python_version": "3.10.10 (main, Mar  1 2023, 11:26:27) [GCC 10.2.1 20210110]",
+  "checkov_executable": "/usr/local/bin/checkov",
+  "args": [
+    "Command Line Args:   --ca-certificate /checkovCert/complete_chain.pem -f terraform/aws/neptune.tf -s --bc-api-key **** --repo-id DayoSE/terragoat --skip-check BC_LIC* -o json",
+    "Environment Variables:",
+    "  PRISMA_API_URL:    https://app2.prismacloud.io/",
+    "Defaults:",
+    "  --framework:       ['all']",
+    "  --branch:          master",
+    "  --download-external-modules:False",
+    "  --external-modules-download-path:.external_modules",
+    "  --evaluate-variables:True",
+    "  --secrets-scan-file-type:[]",
+    "  --block-list-secret-scan:[]",
+    "  --summary-position:top",
+    "  --mask:            []",
+    "  --secrets-history-timeout:12h",
+    ""
+  ],
+  "OS_system_info": "Linux-5.10.104-linuxkit-aarch64-with-glibc2.31",
+  "CPU_architecture": "",
+  "Python_implementation": "CPython"
+}
+2023-03-08 23:05:38,639 [MainThread  ] [DEBUG]  Using API key and not --include-all-checkov-policies - only running platform policies (this is the default behavior, and this message is just for debugging purposes)
+2023-03-08 23:05:38,639 [MainThread  ] [DEBUG]  Resultant set of frameworks (removing skipped frameworks): all
+2023-03-08 23:05:38,639 [MainThread  ] [DEBUG]  BC_SOURCE = vscode, version = 1.0.93
+2023-03-08 23:05:38,639 [MainThread  ] [DEBUG]  terraform_runner declares no system dependency checks required.
+2023-03-08 23:05:38,639 [MainThread  ] [DEBUG]  cloudformation_runner declares no system dependency checks required.
+2023-03-08 23:05:38,639 [MainThread  ] [DEBUG]  kubernetes_runner declares no system dependency checks required.
+2023-03-08 23:05:38,639 [MainThread  ] [DEBUG]  serverless_runner declares no system dependency checks required.
+2023-03-08 23:05:38,639 [MainThread  ] [DEBUG]  arm_runner declares no system dependency checks required.
+2023-03-08 23:05:38,639 [MainThread  ] [DEBUG]  terraform_plan_runner declares no system dependency checks required.
+2023-03-08 23:05:38,639 [MainThread  ] [INFO ]  Checking necessary system dependancies for helm checks.
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:38,654 [MainThread  ] [INFO ]  Found working version of helm dependancies: v3.11.1
+2023-03-08 23:05:38,654 [MainThread  ] [DEBUG]  dockerfile_runner declares no system dependency checks required.
+2023-03-08 23:05:38,654 [MainThread  ] [DEBUG]  secrets_runner declares no system dependency checks required.
+2023-03-08 23:05:38,654 [MainThread  ] [DEBUG]  json_runner declares no system dependency checks required.
+2023-03-08 23:05:38,654 [MainThread  ] [DEBUG]  yaml_runner declares no system dependency checks required.
+2023-03-08 23:05:38,654 [MainThread  ] [DEBUG]  github_configuration_runner declares no system dependency checks required.
+2023-03-08 23:05:38,654 [MainThread  ] [DEBUG]  gitlab_configuration_runner declares no system dependency checks required.
+2023-03-08 23:05:38,654 [MainThread  ] [DEBUG]  gitlab_ci_runner declares no system dependency checks required.
+2023-03-08 23:05:38,654 [MainThread  ] [DEBUG]  bitbucket_configuration_runner declares no system dependency checks required.
+2023-03-08 23:05:38,654 [MainThread  ] [DEBUG]  bitbucket_pipelines_runner declares no system dependency checks required.
+2023-03-08 23:05:38,654 [MainThread  ] [INFO ]  Checking necessary system dependancies for kustomize checks.
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:38,657 [MainThread  ] [INFO ]  Found working version of kustomize dependency kustomize: v5.0.0
+2023-03-08 23:05:38,657 [MainThread  ] [DEBUG]  github_actions_runner declares no system dependency checks required.
+2023-03-08 23:05:38,657 [MainThread  ] [DEBUG]  bicep_runner declares no system dependency checks required.
+2023-03-08 23:05:38,657 [MainThread  ] [DEBUG]  openapi_runner declares no system dependency checks required.
+2023-03-08 23:05:38,657 [MainThread  ] [DEBUG]  sca_image_runner declares no system dependency checks required.
+2023-03-08 23:05:38,657 [MainThread  ] [DEBUG]  argo_workflows_runner declares no system dependency checks required.
+2023-03-08 23:05:38,657 [MainThread  ] [DEBUG]  circleci_pipelines_runner declares no system dependency checks required.
+2023-03-08 23:05:38,657 [MainThread  ] [DEBUG]  azure_pipelines_runner declares no system dependency checks required.
+2023-03-08 23:05:38,657 [MainThread  ] [DEBUG]  ansible_runner declares no system dependency checks required.
+2023-03-08 23:05:38,657 [MainThread  ] [DEBUG]  sca_package_runner declares no system dependency checks required.
+2023-03-08 23:05:38,657 [MainThread  ] [DEBUG]  Using API key ending with Sl1p9uk=
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:38,658 [MainThread  ] [INFO ]  Using Prisma API URL: https://api2.prismacloud.io
+2023-03-08 23:05:38,658 [MainThread  ] [DEBUG]  Should run contributor metrics report: False
+ 
+[debug]: Log from Checkov: 2023-03-08 23:05:39,356 [MainThread  ] [WARNI]  Failed to get the customer run config from https://api2.prismacloud.io/bridgecrew/api/v2/checkov/runConfiguration
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connection.py", line 414, in connect
+    self.sock = ssl_wrap_socket(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/local/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/lib/python3.10/ssl.py", line 1071, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.10/ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get issuer certificate (_ssl.c:997)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 616, in get_customer_run_config
+    token = self.get_auth_token()
+  File "/usr/local/lib/python3.10/site-packages/cachetools/__init__.py", line 737, in wrapper
+    v = func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 182, in get_auth_token
+    request = self.http.request("POST", f"{self.prisma_api_url}/login",  # type:ignore[no-untyped-call]
+  File "/usr/local/lib/python3.10/site-packages/urllib3/request.py", line 78, in request
+    return self.request_encode_body(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api2.prismacloud.io', port=443): Max retries exceeded with url: /login (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get issuer certificate (_ssl.c:997)')))
+An error occurred getting data from the platform, including policy metadata. Because --include-all-checkov-policies was not used, Checkov cannot differentiate Checkov-only policies from platform policies, and no policies will get evaluated. Please resolve the error above or re-run with the --include-all-checkov-policies argument (but note that this will not include any custom platform configurations or policy metadata).[0m[0m[0m
+[0m[0m 
+[debug]: Log from Checkov: [0m2023-03-08 23:05:39,362 [MainThread  ] [ERROR]  Exception traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connection.py", line 414, in connect
+    self.sock = ssl_wrap_socket(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/local/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/local/lib/python3.10/ssl.py", line 1071, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.10/ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get issuer certificate (_ssl.c:997)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/checkov/main.py", line 782, in run
+    bc_integration.get_platform_run_config()
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 589, in get_platform_run_config
+    self.get_customer_run_config()
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 616, in get_customer_run_config
+    token = self.get_auth_token()
+  File "/usr/local/lib/python3.10/site-packages/cachetools/__init__.py", line 737, in wrapper
+    v = func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/checkov/common/bridgecrew/platform_integration.py", line 182, in get_auth_token
+    request = self.http.request("POST", f"{self.prisma_api_url}/login",  # type:ignore[no-untyped-call]
+  File "/usr/local/lib/python3.10/site-packages/urllib3/request.py", line 78, in request
+    return self.request_encode_body(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api2.prismacloud.io', port=443): Max retries exceeded with url: /login (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get issuer certificate (_ssl.c:997)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/checkov/main.py", line 792, in run
+    self.exit_run()
+  File "/usr/local/lib/python3.10/site-packages/checkov/main.py", line 959, in exit_run
+    exit(0) if self.config.no_fail_on_crash else exit(2)
+  File "/usr/local/lib/python3.10/_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+SystemExit: 2
+[0m[0m 
+[debug]: Checkov scan process exited with code 2 
+[debug]: Checkov task output: {"stdout":""}
+[error]: Error occurred while running a checkov scan {"error":"Checkov exited with code 2"}
+[info]: Cancellation token invoked, aborting checkov run. 
+[info]: not deleting container vscode-checkov-1678316736773 as it was already removed 
